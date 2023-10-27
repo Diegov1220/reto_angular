@@ -1,0 +1,37 @@
+<div class="grid-container" style="align-items: center;">
+  <h1 class="mat-h1">Dashboard</h1>
+  <div class="row">
+    <div class="col-md">
+      <mat-form-field class="example-full-width w-75">
+        <mat-label>Pais</mat-label>
+        <input matInput placeholder="Busca un pais por nombre..."/>
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+    </div>
+    <div class="col-md">
+      <mat-form-field class="w-75">
+        <mat-label>Continentes</mat-label>
+        <mat-select multiple>
+          <mat-option *ngFor="let cont of conts">{{cont.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid-container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let post of posts">
+      <div class="card">
+        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+        <div class="card-body">
+          <h5 class="card-title">{{post.name}}</h5>
+          <p class="card-text">
+            {{post.continent.name}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
